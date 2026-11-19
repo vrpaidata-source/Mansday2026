@@ -9,6 +9,7 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
  min-height:100vh;
@@ -17,12 +18,15 @@ body{
  font-family:"Noto Sans Tamil","Latha",sans-serif;
  text-align:center;
 }
+
 .hidden{display:none!important}
+
 .page{
  max-width:520px;
  margin:auto;
  padding:25px 18px;
 }
+
 .card{
  background:#17243a;
  border:1px solid #ffffff25;
@@ -31,15 +35,18 @@ body{
  margin-top:20px;
  box-shadow:0 12px 30px #0005;
 }
+
 h1{color:#ffe1a0;font-size:27px}
 h2{color:#ffe1a0}
 p{color:#d5deeb;line-height:1.9}
+
 label{
  display:block;
  text-align:left;
  color:#ffe1a0;
  margin-top:18px;
 }
+
 input{
  width:100%;
  padding:14px;
@@ -50,6 +57,7 @@ input{
  color:white;
  font-size:16px;
 }
+
 button{
  border:0;
  border-radius:14px;
@@ -61,11 +69,19 @@ button{
  color:#241a0c;
  margin-top:15px;
 }
+
+button:disabled{
+ opacity:.6;
+ cursor:wait;
+}
+
 .secondary{
  background:#34445f;
  color:white;
 }
+
 .full{width:100%}
+
 #photoPreview{
  display:none;
  width:100%;
@@ -75,11 +91,13 @@ button{
  border-radius:15px;
  border:2px solid #e9c77f;
 }
+
 #status{
  color:#ffe1a0;
  font-size:13px;
  overflow-wrap:anywhere;
 }
+
 #giftPage{
  min-height:100vh;
  display:flex;
@@ -88,16 +106,20 @@ button{
  align-items:center;
  padding:20px;
 }
+
 .gift{
  font-size:120px;
  cursor:pointer;
  filter:drop-shadow(0 0 22px #f5c66b);
  animation:float 1.8s infinite;
 }
+
 @keyframes float{
  50%{transform:translateY(-15px) scale(1.08)}
 }
+
 #giftPage h1{margin-top:25px}
+
 .greeting{
  max-width:500px;
  margin:30px auto;
@@ -106,6 +128,7 @@ button{
  border-radius:22px;
  background:linear-gradient(160deg,#1b2942,#080e1c);
 }
+
 .sender{
  font-size:26px;
  font-weight:900;
@@ -113,31 +136,76 @@ button{
  margin:22px 0;
  overflow-wrap:anywhere;
 }
+
 .heart{font-size:42px}
+
 </style>
 </head>
 
 <body>
 
-<!-- EDIT PAGE -->
-<section id="editPage" class="page">
+<!-- CREATOR HOME PAGE -->
+<section id="homePage" class="page">
+
  <h1>🎁 Men's Day Surprise</h1>
 
+ <div class="card">
+  <div class="heart">❤️</div>
+
+  <h2>பல பரிமாணங்களாலே!</h2>
+
+  <p>
+   உங்கள் அன்பான வாழ்த்துகளைப்
+   புகைப்படத்துடன் பகிர்ந்துகொள்ளுங்கள்.
+  </p>
+
+  <button class="full" id="createButton">
+   ✨ வாழ்த்துக்களை உருவாக்குங்கள்
+  </button>
+ </div>
+
+</section>
+
+
+<!-- SENDER DETAILS PAGE -->
+<section id="editPage" class="page hidden">
+
+ <h1>🎁 உங்கள் வாழ்த்தை உருவாக்குங்கள்</h1>
+
  <p>
-  உங்கள் விருப்பப்படி அனுப்புநர் பெயரை மாற்றி,
-  புகைப்படத்துடன் வாழ்த்து Link அனுப்புங்கள்.
+  அனுப்புநர் பெயரை உள்ளிட்டு,
+  புகைப்படத்தைத் தேர்வு செய்து
+  வாழ்த்து Link அனுப்புங்கள்.
  </p>
 
  <div class="card">
-  <h2>✏️ Edit Your Greeting</h2>
+
+  <h2>💌 வாழ்த்து அனுப்புநர்</h2>
+
+  <p>இந்த வாழ்த்து லிங்கில் உள்ள அனுப்புநர் பெயர்:</p>
 
   <label>அனுப்புநர் பெயர்</label>
-  <input id="senderName" type="text"
-   placeholder="எந்தப் பெயரையும் உள்ளிடலாம்"
-   maxlength="50">
 
-  <label>புகைப்படம் Upload செய்யுங்கள்</label>
-  <input id="photoInput" type="file" accept="image/*">
+  <input
+   id="senderName"
+   type="text"
+   placeholder="உங்கள் பெயரை எழுதுங்கள்"
+   maxlength="50"
+  >
+
+ </div>
+
+ <div class="card">
+
+  <h2>📸 புகைப்படம்</h2>
+
+  <label>புகைப்படத்தை Upload செய்யுங்கள்</label>
+
+  <input
+   id="photoInput"
+   type="file"
+   accept="image/*"
+  >
 
   <img id="photoPreview" alt="புகைப்பட முன்னோட்டம்">
 
@@ -146,12 +214,19 @@ button{
   </button>
 
   <p id="status"></p>
+
  </div>
+
+ <button class="secondary full" id="backButton">
+  ← மீண்டும் செல்ல
+ </button>
+
 </section>
 
 
 <!-- GIFT PAGE -->
 <section id="giftPage" class="hidden">
+
  <div class="gift" id="giftBox">🎁</div>
 
  <h1>உங்களுக்காக ஒரு சிறப்பு பரிசு!</h1>
@@ -161,12 +236,16 @@ button{
   பரிசுப் பெட்டியைத் தொட்டுத் திறக்கவும்.
  </p>
 
- <button id="openGift">பரிசைத் திறக்கவும் ❤️</button>
+ <button id="openGift">
+  பரிசைத் திறக்கவும் ❤️
+ </button>
+
 </section>
 
 
 <!-- GREETING PAGE -->
 <section id="messagePage" class="page hidden">
+
  <div class="greeting">
 
   <p style="color:#f5c66b;letter-spacing:2px">
@@ -186,41 +265,59 @@ button{
   </p>
 
   <p>அன்புடன் வாழ்த்துவது</p>
+
   <div class="sender" id="receivedSender"></div>
 
   <div class="heart">💐</div>
+
  </div>
 
- <button id="restartButton">🔄 மீண்டும் தொடங்கு</button>
+ <button id="restartButton">
+  🔄 மீண்டும் தொடங்கு
+ </button>
+
 </section>
 
 
 <script>
-const $=id=>document.getElementById(id);
 
-let selectedFile=null;
-let currentSender='';
+const $ = id => document.getElementById(id);
 
-/* CHECK WHETHER THIS IS A GIFT LINK */
+let selectedFile = null;
+
+
+/* PAGE NAVIGATION */
+
+function showPage(pageId){
+
+ ['homePage','editPage','giftPage','messagePage'].forEach(id=>{
+  $(id).classList.add('hidden');
+ });
+
+ $(pageId).classList.remove('hidden');
+
+ window.scrollTo(0,0);
+}
+
+
+/* CHECK GIFT LINK */
 
 function loadPage(){
 
- const params=new URLSearchParams(location.search);
- const name=params.get('from');
+ const params = new URLSearchParams(location.search);
+ const name = params.get('from');
 
  if(name && name.trim()){
 
-  currentSender=name.trim();
+  // Recipient opens the link: Gift Box first
+  $('receivedSender').textContent = name.trim();
 
-  $('editPage').classList.add('hidden');
-  $('giftPage').classList.remove('hidden');
-
-  $('receivedSender').textContent=currentSender;
+  showPage('giftPage');
 
  }else{
 
-  $('editPage').classList.remove('hidden');
-  $('giftPage').classList.add('hidden');
+  // Creator opens the main website
+  showPage('homePage');
 
  }
 
@@ -229,22 +326,41 @@ function loadPage(){
 loadPage();
 
 
+/* CREATE GREETING */
+
+$('createButton').addEventListener('click',()=>{
+ showPage('editPage');
+});
+
+
+/* BACK BUTTON */
+
+$('backButton').addEventListener('click',()=>{
+ showPage('homePage');
+});
+
+
 /* PHOTO PREVIEW */
 
 $('photoInput').addEventListener('change',()=>{
 
- const file=$('photoInput').files[0];
+ const file = $('photoInput').files[0];
 
  if(!file)return;
 
  if(!file.type.startsWith('image/')){
+
   alert('புகைப்படத்தை மட்டும் தேர்வு செய்யுங்கள்.');
+
+  $('photoInput').value='';
+  selectedFile=null;
+
   return;
  }
 
  selectedFile=file;
 
- const previewURL=URL.createObjectURL(file);
+ const previewURL = URL.createObjectURL(file);
 
  $('photoPreview').src=previewURL;
  $('photoPreview').style.display='block';
@@ -254,38 +370,45 @@ $('photoInput').addEventListener('change',()=>{
 });
 
 
-/* SHARE PHOTO + PERSONALIZED LINK */
+/* SHARE PHOTO + PERSONALIZED GIFT LINK */
 
 $('shareButton').addEventListener('click',async()=>{
 
- const name=$('senderName').value.trim();
+ const name = $('senderName').value.trim();
 
  if(!name){
+
   alert('அனுப்புநர் பெயரை உள்ளிடுங்கள்.');
+
+  $('senderName').focus();
+
   return;
  }
 
  if(!selectedFile){
+
   alert('முதலில் புகைப்படத்தை Upload செய்யுங்கள்.');
+
   return;
  }
 
- currentSender=name;
+ // Create personalized gift link
+ const giftURL = new URL(
+  location.origin + location.pathname
+ );
 
- // Create a fresh link using the latest edited name
- const giftURL=new URL(location.origin+location.pathname);
- giftURL.searchParams.set('from',currentSender);
+ giftURL.searchParams.set('from',name);
 
- const finalLink=giftURL.toString();
+ const finalLink = giftURL.toString();
 
- const button=$('shareButton');
+ const button = $('shareButton');
 
  button.disabled=true;
  button.textContent='Share தயாராகிறது...';
 
  try{
 
-  const shareData={
+  const shareData = {
    title:"Men's Day Surprise",
    text:
     'உங்களுக்காக ஒரு சிறப்பு வாழ்த்து! 🎁\n'+
@@ -294,11 +417,16 @@ $('shareButton').addEventListener('click',async()=>{
    url:finalLink
   };
 
-  // Attach uploaded photo when supported
-  if(navigator.canShare &&
-     navigator.canShare({files:[selectedFile]})){
+  // Check whether browser supports sharing files
+  let photoAttached=false;
+
+  if(
+   navigator.canShare &&
+   navigator.canShare({files:[selectedFile]})
+  ){
 
    shareData.files=[selectedFile];
+   photoAttached=true;
 
   }
 
@@ -306,7 +434,9 @@ $('shareButton').addEventListener('click',async()=>{
 
    await navigator.share(shareData);
 
-   $('status').textContent='Share முடிந்தது! ❤️';
+   $('status').textContent = photoAttached
+    ? 'புகைப்படமும் Gift Link-உம் Share செய்யப்பட்டது! ❤️'
+    : 'Gift Link Share செய்யப்பட்டது. இந்த Browser-ல் புகைப்படத்தை இணைக்க முடியவில்லை.';
 
   }else{
 
@@ -321,6 +451,8 @@ $('shareButton').addEventListener('click',async()=>{
    $('status').textContent='Share ரத்து செய்யப்பட்டது.';
 
   }else{
+
+   $('status').textContent='Share செய்ய முடியவில்லை. Gift Link-ஐ Copy செய்யுங்கள்.';
 
    await copyLink(finalLink);
 
@@ -360,14 +492,12 @@ async function copyLink(link){
 
 function openGift(){
 
- $('giftPage').classList.add('hidden');
- $('messagePage').classList.remove('hidden');
-
- window.scrollTo(0,0);
+ showPage('messagePage');
 
 }
 
 $('openGift').addEventListener('click',openGift);
+
 $('giftBox').addEventListener('click',openGift);
 
 
@@ -375,10 +505,7 @@ $('giftBox').addEventListener('click',openGift);
 
 $('restartButton').addEventListener('click',()=>{
 
- $('messagePage').classList.add('hidden');
- $('giftPage').classList.remove('hidden');
-
- window.scrollTo(0,0);
+ showPage('giftPage');
 
 });
 
