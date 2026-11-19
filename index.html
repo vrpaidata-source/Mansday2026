@@ -3,414 +3,440 @@
 <html lang="ta">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#080d18">
-<title>Men's Day Surprise 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080e1c">
+<title>Men's Day Surprise Greeting</title>
 
 <style>
-*{box-sizing:border-box}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
 body{
- margin:0;
- min-height:100vh;
- background:radial-gradient(circle at top,#26354c,#080d18 75%);
- color:white;
- font-family:"Noto Sans Tamil",sans-serif;
- text-align:center;
+  min-height:100vh;
+  font-family:'Noto Sans Tamil',sans-serif;
+  background:radial-gradient(circle at top,#1c2942,#080e1c 65%);
+  color:#fff;
+  text-align:center;
+  overflow-x:hidden;
 }
-.hidden{display:none!important}
+
 .container{
- max-width:520px;
- margin:auto;
- padding:25px 18px;
+  width:100%;
+  max-width:600px;
+  margin:auto;
+  padding:35px 20px;
 }
-.card{
- background:#17243a;
- border:1px solid #ffffff25;
- border-radius:22px;
- padding:24px 18px;
- margin-top:20px;
- box-shadow:0 12px 30px #0005;
-}
+
 h1{
- color:#ffe1a0;
- font-size:27px;
+  color:#ffdc91;
+  font-size:27px;
+  line-height:1.6;
+  margin-bottom:15px;
 }
-h2{color:#ffe1a0}
-p{line-height:1.9;color:#d5deeb}
-label{
- display:block;
- text-align:left;
- color:#ffe1a0;
- margin-top:18px;
+
+.subtitle{
+  color:#c5ccda;
+  font-size:16px;
+  line-height:1.9;
+  margin-bottom:30px;
 }
+
+.panel{
+  background:#17243a;
+  border:1px solid #35445e;
+  border-radius:25px;
+  padding:28px 20px;
+  margin-top:25px;
+  box-shadow:0 12px 35px #0005;
+}
+
+.panel h2{
+  color:#ffdc91;
+  font-size:23px;
+  margin-bottom:22px;
+}
+
 input{
- width:100%;
- padding:14px;
- margin-top:8px;
- border-radius:10px;
- border:1px solid #ffffff35;
- background:#0e192b;
- color:white;
- font-size:16px;
+  width:100%;
+  padding:16px;
+  border-radius:13px;
+  border:1px solid #59677d;
+  background:#0e192c;
+  color:white;
+  font-size:17px;
+  font-family:inherit;
+  outline:none;
+  margin:12px 0 20px;
 }
+
 button{
- border:0;
- border-radius:14px;
- padding:14px 20px;
- font-size:16px;
- font-weight:bold;
- cursor:pointer;
- background:linear-gradient(120deg,#ffe4a3,#dba443);
- color:#241a0c;
- margin-top:15px;
+  border:none;
+  border-radius:14px;
+  padding:15px 22px;
+  font-size:17px;
+  font-weight:700;
+  font-family:inherit;
+  cursor:pointer;
+  transition:.2s;
 }
-button.secondary{
- background:#34445f;
- color:white;
+
+button:active{
+  transform:scale(.96);
 }
-.full{width:100%}
-#photoPreview{
- display:none;
- width:100%;
- max-height:320px;
- object-fit:contain;
- margin-top:15px;
- border-radius:15px;
- border:2px solid #e9c77f;
+
+.primary{
+  background:linear-gradient(135deg,#ffdf9a,#e8ad4d);
+  color:#172033;
+  width:100%;
 }
-#shareStatus{
- font-size:13px;
- overflow-wrap:anywhere;
- color:#ffe1a0;
+
+.secondary{
+  background:#34445f;
+  color:white;
+  width:100%;
+  margin-top:13px;
 }
-#giftPage{
- min-height:100vh;
- display:flex;
- flex-direction:column;
- justify-content:center;
- align-items:center;
- padding:20px;
+
+#creatorPage,#giftPage,#greetingPage{
+  display:none;
 }
+
+/* Gift page */
+
+.gift-area{
+  min-height:75vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
 .gift{
- font-size:120px;
- cursor:pointer;
- animation:float 1.8s infinite;
- filter:drop-shadow(0 0 20px #f5c66b);
+  font-size:125px;
+  cursor:pointer;
+  display:inline-block;
+  animation:bounce 1.7s infinite;
+  filter:drop-shadow(0 12px 20px #ffbd4d55);
 }
-@keyframes float{
- 50%{transform:translateY(-15px) scale(1.06)}
+
+@keyframes bounce{
+  0%,100%{transform:translateY(0) rotate(-3deg)}
+  50%{transform:translateY(-15px) rotate(3deg)}
 }
-#giftPage h1{margin-top:25px}
-#messagePage{
- padding:25px 18px;
+
+.gift-title{
+  color:#ffdc91;
+  font-size:28px;
+  margin:25px 0 12px;
 }
-.greeting{
- max-width:500px;
- margin:20px auto;
- padding:25px 18px;
- border:2px solid #e9c77f;
- border-radius:22px;
- background:linear-gradient(160deg,#1b2942,#080e1c);
+
+.gift-text{
+  color:#d4d9e5;
+  font-size:16px;
+  line-height:1.8;
 }
-.greeting img{
- width:100%;
- max-height:420px;
- object-fit:contain;
- border-radius:12px;
- margin:15px 0;
+
+/* Greeting */
+
+.greeting-card{
+  border:2px solid #e9c77f;
+  border-radius:22px;
+  padding:35px 20px;
+  background:linear-gradient(160deg,#1b2942,#080e1c);
+  box-shadow:0 0 35px #e6b65c22;
+  animation:appear 1s ease;
 }
-.sender{
- font-size:25px;
- font-weight:bold;
- color:#ffe1a0;
- overflow-wrap:anywhere;
- margin:20px 0;
+
+@keyframes appear{
+  from{opacity:0;transform:scale(.85)}
+  to{opacity:1;transform:scale(1)}
+}
+
+.greeting-card .small-title{
+  color:#ffdc91;
+  font-size:17px;
+  font-weight:700;
+  margin-bottom:25px;
+}
+
+.greeting-card h1{
+  font-size:30px;
+  margin-bottom:20px;
+}
+
+.greeting-card .wish{
+  font-size:19px;
+  line-height:2;
+  color:#f4f0e8;
+}
+
+.sender-name{
+  color:#ffdc91;
+  font-size:25px;
+  font-weight:800;
+  margin:25px 0 10px;
+  overflow-wrap:anywhere;
+}
+
+.from-text{
+  color:#bfc8d8;
+  font-size:15px;
+  margin-top:8px;
+}
+
+.decoration{
+  font-size:38px;
+  margin:20px 0;
+}
+
+.footer{
+  color:#8793a8;
+  font-size:12px;
+  margin-top:30px;
+}
+
+#shareResult{
+  display:none;
+  margin-top:20px;
+  padding:15px;
+  border-radius:13px;
+  background:#0d192c;
+  overflow-wrap:anywhere;
+  color:#ffdc91;
+  line-height:1.8;
+}
+
+@media(max-width:400px){
+  h1{font-size:23px}
+  .gift{font-size:105px}
+  .greeting-card h1{font-size:25px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- EDIT PAGE: ONLY SENDER CAN SEE -->
-<section id="editPage" class="container">
- <h1>🎁 Men's Day Surprise</h1>
- <p>உங்கள் பெயருடனும் புகைப்படத்துடனும் வாழ்த்து லிங்க் உருவாக்குங்கள்.</p>
+<!-- CREATOR PAGE -->
+<div class="container" id="creatorPage">
 
- <div class="card">
-  <h2>✏️ Edit Your Greeting</h2>
+  <h1>உங்கள் அன்பான வாழ்த்து...</h1>
 
-  <label>அனுப்புநர் பெயர்</label>
-  <input id="senderName" type="text"
-   placeholder="உங்கள் பெயரை உள்ளிடுங்கள்" maxlength="40">
+  <p class="subtitle">
+    உங்களுக்கு பிடித்தவர்களுக்கு<br>
+    ஒரு சிறிய Surprise Gift அனுப்புங்கள்.
+  </p>
 
-  <label>உங்கள் புகைப்படம்</label>
-  <input id="photoInput" type="file" accept="image/*">
+  <div class="panel">
 
-  <img id="photoPreview" alt="புகைப்பட முன்னோட்டம்">
+    <h2>💌 வாழ்த்து அனுப்புநர்</h2>
 
-  <button class="full" id="shareButton">
-   📤 Open Share
-  </button>
+    <input
+      type="text"
+      id="senderName"
+      placeholder="உங்கள் பெயரை உள்ளிடுங்கள்"
+      maxlength="40"
+    >
 
-  <p id="shareStatus"></p>
- </div>
-</section>
+    <button class="primary" onclick="createLink()">
+      🎁 Create Surprise Link
+    </button>
+
+    <div id="shareResult">
+      <p>உங்கள் வாழ்த்து லிங்க் தயாராகிவிட்டது!</p>
+      <p id="generatedLink"></p>
+
+      <button class="primary" onclick="shareLink()">
+        📤 Share Link
+      </button>
+
+      <button class="secondary" onclick="copyLink()">
+        🔗 Copy Link
+      </button>
+    </div>
+
+  </div>
+
+  <p class="footer">
+    INTERNATIONAL MEN'S DAY
+  </p>
+</div>
 
 
-<!-- GIFT PAGE: RECEIVER SEES THIS FIRST -->
-<section id="giftPage" class="hidden">
- <div class="gift" id="giftBox">🎁</div>
+<!-- RECEIVER GIFT PAGE -->
+<div class="container" id="giftPage">
 
- <h1>உங்களுக்காக ஒரு சிறப்பு பரிசு!</h1>
+  <div class="gift-area">
 
- <p>
-  ஒரு அழகான வாழ்த்து உங்களுக்காகக் காத்திருக்கிறது.<br>
-  பரிசுப் பெட்டியைத் திறக்கவும்.
- </p>
+    <div class="gift" onclick="openGift()">
+      🎁
+    </div>
 
- <button id="openGift">பரிசைத் திறக்கவும் ❤️</button>
-</section>
+    <h2 class="gift-title">உங்களுக்காக ஒரு பரிசு!</h2>
+
+    <p class="gift-text">
+      உங்களுக்காக ஒரு சிறிய அன்பான வாழ்த்து காத்திருக்கிறது.<br>
+      பரிசுப் பெட்டியைத் தொட்டுத் திறக்கவும்.
+    </p>
+
+    <button class="primary" style="margin-top:28px"
+      onclick="openGift()">
+      🎁 பரிசைத் திறக்கவும்
+    </button>
+
+  </div>
+</div>
 
 
 <!-- GREETING PAGE -->
-<section id="messagePage" class="hidden">
- <div class="greeting">
+<div class="container" id="greetingPage">
 
-  <p style="color:#f5c66b;letter-spacing:2px">
-   19 NOVEMBER 2026
+  <div class="greeting-card">
+
+    <div class="small-title">
+      INTERNATIONAL MEN'S DAY
+    </div>
+
+    <div class="decoration">✨ 🎉 ✨</div>
+
+    <h1>
+      இனிய ஆண்கள் தின<br>
+      நல்வாழ்த்துகள்!
+    </h1>
+
+    <p class="wish">
+      உங்கள் வாழ்க்கையில்<br>
+      மகிழ்ச்சியும், நம்பிக்கையும்,<br>
+      வெற்றியும் என்றும் நிறைந்திருக்கட்டும்!
+    </p>
+
+    <div class="decoration">💐</div>
+
+    <p class="from-text">
+      அன்புடன் வாழ்த்துவது
+    </p>
+
+    <div class="sender-name" id="displaySender">
+      அனுப்புநர்
+    </div>
+
+    <div class="decoration">❤️</div>
+
+  </div>
+
+  <button class="primary" style="margin-top:25px"
+    onclick="restartGift()">
+    🔄 மீண்டும் தொடங்கு
+  </button>
+
+  <p class="footer">
+    அன்பும் மரியாதையும் என்றும் தொடரட்டும்.
   </p>
 
-  <h1>HAPPY MEN'S DAY</h1>
-
-  <h2>இனிய ஆண்கள் தின நல்வாழ்த்துக்கள்!</h2>
-
-  <p>
-   உழைப்பையும் பொறுப்பையும் மதிப்போம்.<br>
-   சொல்லப்படாத வலிகளையும் புரிந்துகொள்வோம்.<br>
-   மனிதநேயத்துடன் வாழ்வோம்.
-  </p>
-
-  <img id="receivedPhoto" alt="அனுப்பிய புகைப்படம்">
-
-  <p>அன்புடன் வாழ்த்துவது</p>
-  <div class="sender" id="receivedSender"></div>
-
-  <p>❤️ உங்களுக்கு இனிய வாழ்த்துகள் ❤️</p>
-
- </div>
-
- <button id="restartButton">🔄 மீண்டும் தொடங்கு</button>
-</section>
+</div>
 
 
 <script>
-const $=id=>document.getElementById(id);
 
-let selectedPhoto=null;
-let senderName='';
+let finalLink = "";
+let sender = "";
 
-/* CHECK SHARED LINK */
+/* URL CHECK */
 
-function readSharedLink(){
+const params = new URLSearchParams(window.location.search);
+const receivedName = params.get("from");
 
- const hash=location.hash.substring(1);
+if(receivedName){
 
- if(!hash){
-  $('editPage').classList.remove('hidden');
-  return;
- }
+  sender = receivedName;
 
- try{
+  document.getElementById("giftPage").style.display="block";
 
-  const params=new URLSearchParams(hash);
+}else{
 
-  const name=params.get('from');
-  const photo=params.get('photo');
+  document.getElementById("creatorPage").style.display="block";
 
-  if(!name || !photo){
-   $('editPage').classList.remove('hidden');
-   return;
+}
+
+
+/* CREATE SHARE LINK */
+
+function createLink(){
+
+  const name = document.getElementById("senderName").value.trim();
+
+  if(!name){
+    alert("தயவுசெய்து உங்கள் பெயரை உள்ளிடுங்கள்.");
+    return;
   }
 
-  senderName=name;
+  sender = name;
 
-  $('editPage').classList.add('hidden');
-  $('giftPage').classList.remove('hidden');
+  const baseURL =
+    window.location.origin + window.location.pathname;
 
-  $('receivedSender').textContent=senderName;
-  $('receivedPhoto').src=photo;
+  finalLink =
+    baseURL + "?from=" + encodeURIComponent(sender);
 
- }catch(error){
+  document.getElementById("generatedLink").textContent =
+    finalLink;
 
-  $('editPage').classList.remove('hidden');
-
- }
-
-}
-
-readSharedLink();
-
-
-/* PHOTO PREVIEW */
-
-$('photoInput').addEventListener('change',()=>{
-
- const file=$('photoInput').files[0];
-
- if(!file)return;
-
- if(!file.type.startsWith('image/')){
-  alert('புகைப்படத்தை மட்டும் தேர்வு செய்யவும்.');
-  return;
- }
-
- const reader=new FileReader();
-
- reader.onload=()=>{
-  selectedPhoto=reader.result;
-  $('photoPreview').src=selectedPhoto;
-  $('photoPreview').style.display='block';
- };
-
- reader.readAsDataURL(file);
-
-});
-
-
-/* COMPRESS PHOTO FOR LINK */
-
-function compressPhoto(dataURL){
-
- return new Promise((resolve,reject)=>{
-
-  const img=new Image();
-
-  img.onload=()=>{
-
-   const maxWidth=720;
-   const maxHeight=900;
-
-   const scale=Math.min(
-    1,
-    maxWidth/img.width,
-    maxHeight/img.height
-   );
-
-   const canvas=document.createElement('canvas');
-
-   canvas.width=Math.round(img.width*scale);
-   canvas.height=Math.round(img.height*scale);
-
-   const ctx=canvas.getContext('2d');
-
-   ctx.drawImage(img,0,0,canvas.width,canvas.height);
-
-   const compressed=canvas.toDataURL('image/jpeg',0.62);
-
-   resolve(compressed);
-
-  };
-
-  img.onerror=()=>reject(new Error('படத்தைத் திறக்க முடியவில்லை'));
-
-  img.src=dataURL;
-
- });
+  document.getElementById("shareResult").style.display="block";
 
 }
 
 
-/* CREATE AND SHARE LINK */
+/* SHARE */
 
-$('shareButton').addEventListener('click',async()=>{
+async function shareLink(){
 
- senderName=$('senderName').value.trim();
-
- if(!senderName){
-  alert('அனுப்புநர் பெயரை உள்ளிடுங்கள்.');
-  return;
- }
-
- if(!selectedPhoto){
-  alert('முதலில் உங்கள் புகைப்படத்தை Upload செய்யுங்கள்.');
-  return;
- }
-
- const button=$('shareButton');
-
- button.disabled=true;
- button.textContent='Link உருவாகிறது...';
-
- try{
-
-  const compressedPhoto=await compressPhoto(selectedPhoto);
-
-  const params=new URLSearchParams();
-
-  params.set('from',senderName);
-  params.set('photo',compressedPhoto);
-
-  const shareURL=
-   location.origin+
-   location.pathname+
-   '#'+params.toString();
-
-  $('shareStatus').textContent='லிங்க் தயார்! Share திறக்கப்படுகிறது...';
+  if(!finalLink) return;
 
   if(navigator.share){
 
-   try{
+    try{
 
-    await navigator.share({
-     title:"Men's Day Surprise",
-     text:"உங்களுக்காக ஒரு சிறப்பு பரிசு காத்திருக்கிறது! 🎁",
-     url:shareURL
-    });
+      await navigator.share({
+        title:"Men's Day Surprise",
+        text:"உங்களுக்காக ஒரு சிறிய Surprise வாழ்த்து!",
+        url:finalLink
+      });
 
-   }catch(error){
+    }catch(error){
 
-    if(error.name==='AbortError'){
-     $('shareStatus').textContent='Share ரத்து செய்யப்பட்டது.';
-    }else{
-     await copyFallback(shareURL);
+      console.log("Share cancelled");
+
     }
-
-   }
 
   }else{
 
-   await copyFallback(shareURL);
+    copyLink();
 
   }
 
- }catch(error){
-
-  alert('புகைப்படத்தை Link-ஆக மாற்ற முடியவில்லை. வேறு புகைப்படத்தை முயற்சிக்கவும்.');
-
- }finally{
-
-  button.disabled=false;
-  button.textContent='📤 Open Share';
-
- }
-
-});
+}
 
 
-/* COPY FALLBACK */
+/* COPY */
 
-async function copyFallback(url){
+async function copyLink(){
 
- try{
+  if(!finalLink) return;
 
-  await navigator.clipboard.writeText(url);
-  $('shareStatus').textContent='லிங்க் Copy செய்யப்பட்டது. WhatsApp-ல் Paste செய்து அனுப்புங்கள்.';
+  try{
 
- }catch(error){
+    await navigator.clipboard.writeText(finalLink);
+    alert("வாழ்த்து லிங்க் Copy செய்யப்பட்டது!");
 
-  prompt('இந்த லிங்கை Copy செய்யுங்கள்:',url);
+  }catch(error){
 
- }
+    prompt("இந்த லிங்கை Copy செய்யுங்கள்:",finalLink);
+
+  }
 
 }
 
@@ -419,28 +445,31 @@ async function copyFallback(url){
 
 function openGift(){
 
- $('giftPage').classList.add('hidden');
- $('messagePage').classList.remove('hidden');
+  document.getElementById("giftPage").style.display="none";
 
- window.scrollTo(0,0);
+  document.getElementById("displaySender").textContent =
+    sender || "அன்புடன்";
+
+  document.getElementById("greetingPage").style.display="block";
+
+  window.scrollTo(0,0);
 
 }
-
-$('openGift').addEventListener('click',openGift);
-$('giftBox').addEventListener('click',openGift);
 
 
 /* RESTART */
 
-$('restartButton').addEventListener('click',()=>{
+function restartGift(){
 
- $('messagePage').classList.add('hidden');
- $('giftPage').classList.remove('hidden');
+  document.getElementById("greetingPage").style.display="none";
 
- window.scrollTo(0,0);
+  document.getElementById("giftPage").style.display="block";
 
-});
+  window.scrollTo(0,0);
+
+}
 
 </script>
+
 </body>
 </html>
